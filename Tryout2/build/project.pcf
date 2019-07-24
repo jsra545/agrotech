@@ -1,0 +1,31 @@
+//! **************************************************************************
+// Written by: Map P.68d on Tue Jul 23 12:17:46 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "dht22_sda" LOCATE = SITE "P102" LEVEL 1;
+COMP "dig<0>" LOCATE = SITE "P78" LEVEL 1;
+COMP "dig<1>" LOCATE = SITE "P79" LEVEL 1;
+COMP "dig<2>" LOCATE = SITE "P80" LEVEL 1;
+COMP "dig<3>" LOCATE = SITE "P81" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "P82" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "P83" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "P85" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "P88" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "P92" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "P93" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "P94" LEVEL 1;
+TIMEGRP sys_clk = BEL "clk_1MHz/clk_out" BEL "clk_1KHz/clk_out" BEL
+        "clk_1MHz/clk_count_0" BEL "clk_1MHz/clk_count_1" BEL
+        "clk_1MHz/clk_count_2" BEL "clk_1MHz/clk_count_3" BEL
+        "clk_1MHz/clk_count_4" BEL "clk_1KHz/clk_count_0" BEL
+        "clk_1KHz/clk_count_1" BEL "clk_1KHz/clk_count_2" BEL
+        "clk_1KHz/clk_count_3" BEL "clk_1KHz/clk_count_4" BEL
+        "clk_1KHz/clk_count_5" BEL "clk_1KHz/clk_count_6" BEL
+        "clk_1KHz/clk_count_7" BEL "clk_1KHz/clk_count_8" BEL
+        "clk_1KHz/clk_count_9" BEL "clk_1KHz/clk_count_10" BEL
+        "clk_1KHz/clk_count_11" BEL "clk_1KHz/clk_count_12" BEL
+        "clk_1KHz/clk_count_13" BEL "clk_1KHz/clk_count_14" BEL
+        "clock_BUFGP/BUFG";
+SCHEMATIC END;
+

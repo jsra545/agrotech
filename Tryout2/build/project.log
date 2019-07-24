@@ -1,0 +1,736 @@
+Release 14.6 - xst P.68d (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc6slx4-tqg144-2
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : IOT_Bridge
+Automatic Register Balancing       : yes
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 2
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/IOT_Bridge.v" into library work
+Parsing module <IOT_Bridge>.
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/dht22.v" into library work
+Parsing module <DHT22>.
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/CLK_1MHZ.v" into library work
+Parsing module <CLK_1MHZ>.
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/CLK_1KHZ.v" into library work
+Parsing module <CLK_1KHZ>.
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/BIN2BCD.v" into library work
+Parsing module <BIN2BCD>.
+Analyzing Verilog file "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/Seg7.v" into library work
+Parsing module <Seg7>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <IOT_Bridge>.
+
+Elaborating module <CLK_1MHZ>.
+
+Elaborating module <CLK_1KHZ>.
+
+Elaborating module <BIN2BCD>.
+
+Elaborating module <Seg7>.
+
+Elaborating module <DHT22>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <IOT_Bridge>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/IOT_Bridge.v".
+WARNING:Xst:647 - Input <sw<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2935 - Signal 'led<2:0>', unconnected in block 'IOT_Bridge', is tied to its initial value (111).
+    Found 1-bit register for signal <dht22_reset>.
+    Found 1-bit register for signal <dht22_get>.
+    Found 1-bit register for signal <led<3>>.
+    Found 10-bit register for signal <clock_counter>.
+    Found 1-bit register for signal <dht22_select>.
+    Found 10-bit adder for signal <clock_counter[9]_GND_1_o_add_4_OUT> created at line 64.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <IOT_Bridge> synthesized.
+
+Synthesizing Unit <CLK_1MHZ>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/CLK_1MHZ.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 5-bit register for signal <clk_count>.
+    Found 5-bit adder for signal <_n0013> created at line 21.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+Unit <CLK_1MHZ> synthesized.
+
+Synthesizing Unit <CLK_1KHZ>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/CLK_1KHZ.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 15-bit register for signal <clk_count>.
+    Found 15-bit adder for signal <_n0013> created at line 21.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+Unit <CLK_1KHZ> synthesized.
+
+Synthesizing Unit <BIN2BCD>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/BIN2BCD.v".
+WARNING:Xst:647 - Input <binary<15:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit adder for signal <n0183> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_4_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_7_OUT> created at line 25.
+    Found 4-bit adder for signal <n0193> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_13_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_16_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_19_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_22_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_25_OUT> created at line 25.
+    Found 4-bit adder for signal <n0212> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_31_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_34_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_37_OUT> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_40_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_43_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_46_OUT> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_49_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_52_OUT> created at line 25.
+    Found 4-bit adder for signal <n0240> created at line 19.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_58_OUT> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_61_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_64_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_67_OUT> created at line 19.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_70_OUT> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_73_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_76_OUT> created at line 25.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_79_OUT> created at line 19.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_82_OUT> created at line 21.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_85_OUT> created at line 23.
+    Found 4-bit adder for signal <GND_4_o_GND_4_o_add_88_OUT> created at line 25.
+    Found 3-bit comparator lessequal for signal <n0000> created at line 24
+    Found 4-bit comparator lessequal for signal <n0004> created at line 24
+    Found 4-bit comparator lessequal for signal <n0008> created at line 24
+    Found 3-bit comparator lessequal for signal <n0012> created at line 22
+    Found 4-bit comparator lessequal for signal <n0016> created at line 24
+    Found 4-bit comparator lessequal for signal <n0020> created at line 22
+    Found 4-bit comparator lessequal for signal <n0024> created at line 24
+    Found 4-bit comparator lessequal for signal <n0028> created at line 22
+    Found 4-bit comparator lessequal for signal <n0032> created at line 24
+    Found 3-bit comparator lessequal for signal <n0036> created at line 20
+    Found 4-bit comparator lessequal for signal <n0040> created at line 22
+    Found 4-bit comparator lessequal for signal <n0044> created at line 24
+    Found 4-bit comparator lessequal for signal <n0048> created at line 20
+    Found 4-bit comparator lessequal for signal <n0052> created at line 22
+    Found 4-bit comparator lessequal for signal <n0056> created at line 24
+    Found 4-bit comparator lessequal for signal <n0060> created at line 20
+    Found 4-bit comparator lessequal for signal <n0064> created at line 22
+    Found 4-bit comparator lessequal for signal <n0068> created at line 24
+    Found 3-bit comparator lessequal for signal <n0072> created at line 18
+    Found 4-bit comparator lessequal for signal <n0076> created at line 20
+    Found 4-bit comparator lessequal for signal <n0080> created at line 22
+    Found 4-bit comparator lessequal for signal <n0084> created at line 24
+    Found 4-bit comparator lessequal for signal <n0088> created at line 18
+    Found 4-bit comparator lessequal for signal <n0092> created at line 20
+    Found 4-bit comparator lessequal for signal <n0096> created at line 22
+    Found 4-bit comparator lessequal for signal <n0100> created at line 24
+    Found 4-bit comparator lessequal for signal <n0104> created at line 18
+    Found 4-bit comparator lessequal for signal <n0108> created at line 20
+    Found 4-bit comparator lessequal for signal <n0112> created at line 22
+    Found 4-bit comparator lessequal for signal <n0116> created at line 24
+    Summary:
+	inferred  30 Adder/Subtractor(s).
+	inferred  30 Comparator(s).
+	inferred  30 Multiplexer(s).
+Unit <BIN2BCD> synthesized.
+
+Synthesizing Unit <Seg7>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/Seg7.v".
+    Found 4-bit register for signal <disp_dat>.
+    Found 4-bit register for signal <dig>.
+    Found 16x8-bit Read Only RAM for signal <seg>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <Seg7> synthesized.
+
+Synthesizing Unit <DHT22>.
+    Related source file is "/home/sebastian/Documentos/U/EMBEBIDOS/Tryout2/dht22.v".
+    Found 1-bit register for signal <rw>.
+    Found 10-bit register for signal <count>.
+    Found 10-bit register for signal <address>.
+    Found 40-bit register for signal <data>.
+    Found 1-bit register for signal <lastSda>.
+    Found 1-bit register for signal <wdata>.
+    Found 4-bit register for signal <trace>.
+    Found 10-bit register for signal <countTrace>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 26                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 12                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset_INV_7_o (positive)                       |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit subtractor for signal <address[9]_GND_6_o_sub_41_OUT> created at line 178.
+    Found 10-bit adder for signal <count[9]_GND_6_o_add_3_OUT> created at line 66.
+    Found 10-bit adder for signal <countTrace[9]_GND_6_o_add_90_OUT> created at line 257.
+    Found 1-bit tristate buffer for signal <sda> created at line 32
+    Found 10-bit comparator greater for signal <count[9]_GND_6_o_LessThan_34_o> created at line 168
+    Found 10-bit comparator lessequal for signal <n0076> created at line 174
+    Found 4-bit comparator equal for signal <state[3]_trace[3]_equal_83_o> created at line 233
+    Found 10-bit comparator greater for signal <GND_6_o_countTrace[9]_LessThan_84_o> created at line 234
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  77 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred 110 Multiplexer(s).
+	inferred   1 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <DHT22> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 36
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 1
+ 15-bit adder                                          : 1
+ 4-bit adder                                           : 30
+ 5-bit adder                                           : 1
+# Registers                                            : 19
+ 1-bit register                                        : 9
+ 10-bit register                                       : 4
+ 15-bit register                                       : 1
+ 4-bit register                                        : 3
+ 40-bit register                                       : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 34
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 1
+ 3-bit comparator lessequal                            : 4
+ 4-bit comparator equal                                : 1
+ 4-bit comparator lessequal                            : 26
+# Multiplexers                                         : 143
+ 1-bit 2-to-1 multiplexer                              : 85
+ 10-bit 2-to-1 multiplexer                             : 20
+ 16-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 36
+ 40-bit 2-to-1 multiplexer                             : 1
+# Tristates                                            : 1
+ 1-bit tristate buffer                                 : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <CLK_1KHZ>.
+The following registers are absorbed into counter <clk_count>: 1 register on signal <clk_count>.
+Unit <CLK_1KHZ> synthesized (advanced).
+
+Synthesizing (advanced) Unit <CLK_1MHZ>.
+The following registers are absorbed into counter <clk_count>: 1 register on signal <clk_count>.
+Unit <CLK_1MHZ> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Seg7>.
+INFO:Xst:3226 - The RAM <Mram_seg> will be implemented as a BLOCK RAM, absorbing the following register(s): <disp_dat>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <dig[2]_D0[3]_select_6_OUT> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <seg>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <Seg7> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port block Read Only RAM              : 1
+# Adders/Subtractors                                   : 36
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 1
+ 15-bit adder                                          : 1
+ 4-bit adder                                           : 30
+ 5-bit adder                                           : 1
+# Counters                                             : 2
+ 15-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 97
+ Flip-Flops                                            : 97
+# Comparators                                          : 34
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 1
+ 3-bit comparator lessequal                            : 4
+ 4-bit comparator equal                                : 1
+ 4-bit comparator lessequal                            : 26
+# Multiplexers                                         : 143
+ 1-bit 2-to-1 multiplexer                              : 85
+ 10-bit 2-to-1 multiplexer                             : 20
+ 16-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 36
+ 40-bit 2-to-1 multiplexer                             : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <dht22/FSM_0> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+ 0110  | 110
+ 0111  | 111
+-------------------
+WARNING:Xst:2677 - Node <dht22/data_7> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_6> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_5> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_4> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_3> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_2> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_1> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_0> of sequential type is unconnected in block <IOT_Bridge>.
+
+Optimizing unit <IOT_Bridge> ...
+
+Optimizing unit <Seg7> ...
+
+Optimizing unit <BIN2BCD> ...
+WARNING:Xst:2677 - Node <dht22/data_39> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:2677 - Node <dht22/data_23> of sequential type is unconnected in block <IOT_Bridge>.
+WARNING:Xst:1710 - FF/Latch <dht22/address_9> (without init value) has a constant value of 0 in block <IOT_Bridge>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dht22/address_8> (without init value) has a constant value of 0 in block <IOT_Bridge>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dht22/address_7> (without init value) has a constant value of 0 in block <IOT_Bridge>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dht22/address_6> (without init value) has a constant value of 0 in block <IOT_Bridge>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block IOT_Bridge, actual ratio is 15.
+FlipFlop seg7/dig_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop seg7/dig_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop seg7/dig_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop seg7/dig_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop dht22/wdata has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop dht22/rw has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 112
+ Flip-Flops                                            : 112
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 428
+#      GND                         : 1
+#      INV                         : 15
+#      LUT1                        : 55
+#      LUT2                        : 4
+#      LUT3                        : 32
+#      LUT4                        : 9
+#      LUT5                        : 42
+#      LUT6                        : 140
+#      MUXCY                       : 60
+#      MUXF7                       : 3
+#      VCC                         : 1
+#      XORCY                       : 66
+# FlipFlops/Latches                : 112
+#      FD                          : 20
+#      FDE                         : 4
+#      FDR                         : 24
+#      FDRE                        : 57
+#      FDS                         : 1
+#      FDSE                        : 6
+# RAMS                             : 1
+#      RAMB8BWER                   : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 1
+#      BUFGP                       : 2
+# IO Buffers                       : 17
+#      IOBUF                       : 1
+#      OBUF                        : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx4tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             105  out of   4800     2%  
+ Number of Slice LUTs:                  297  out of   2400    12%  
+    Number used as Logic:               297  out of   2400    12%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    301
+   Number with an unused Flip Flop:     196  out of    301    65%  
+   Number with an unused LUT:             4  out of    301     1%  
+   Number of fully used LUT-FF pairs:   101  out of    301    33%  
+   Number of unique control sets:        18
+
+IO Utilization: 
+ Number of IOs:                          22
+ Number of bonded IOBs:                  19  out of    102    18%  
+    IOB Flip Flops/Latches:               7
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     12     8%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+sw<0>                              | BUFGP                  | 1     |
+clk_1KHz/clk_out                   | NONE(led_3)            | 22    |
+clock                              | BUFGP                  | 22    |
+clk_1MHz/clk_out                   | BUFG                   | 68    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.765ns (Maximum Frequency: 147.820MHz)
+   Minimum input arrival time before clock: 5.468ns
+   Maximum output required time after clock: 5.393ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sw<0>'
+  Clock period: 2.769ns (frequency: 361.141MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.769ns (Levels of Logic = 1)
+  Source:            dht22_select (FF)
+  Destination:       dht22_select (FF)
+  Source Clock:      sw<0> rising
+  Destination Clock: sw<0> rising
+
+  Data Path: dht22_select to dht22_select
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              18   0.525   1.234  dht22_select (dht22_select)
+     INV:I->O              1   0.255   0.681  dht22_select_INV_31_o1_INV_0 (dht22_select_INV_31_o)
+     FD:D                      0.074          dht22_select
+    ----------------------------------------
+    Total                      2.769ns (0.854ns logic, 1.915ns route)
+                                       (30.8% logic, 69.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_1KHz/clk_out'
+  Clock period: 5.492ns (frequency: 182.083MHz)
+  Total number of paths / destination ports: 499 / 26
+-------------------------------------------------------------------------
+Delay:               5.492ns (Levels of Logic = 5)
+  Source:            clock_counter_0 (FF)
+  Destination:       dht22_reset (FF)
+  Source Clock:      clk_1KHz/clk_out rising
+  Destination Clock: clk_1KHz/clk_out rising
+
+  Data Path: clock_counter_0 to dht22_reset
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.525   0.681  clock_counter_0 (clock_counter_0)
+     INV:I->O              1   0.255   0.000  Madd_clock_counter[9]_GND_1_o_add_4_OUT_lut<0>_INV_0 (Madd_clock_counter[9]_GND_1_o_add_4_OUT_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Madd_clock_counter[9]_GND_1_o_add_4_OUT_cy<0> (Madd_clock_counter[9]_GND_1_o_add_4_OUT_cy<0>)
+     XORCY:CI->O           3   0.206   1.042  Madd_clock_counter[9]_GND_1_o_add_4_OUT_xor<1> (clock_counter[9]_GND_1_o_add_4_OUT<1>)
+     LUT5:I1->O            6   0.254   0.876  clock_counter[9]_PWR_1_o_equal_6_o<9>_SW0 (N11)
+     LUT6:I5->O            2   0.254   0.725  clock_counter[9]_PWR_1_o_equal_6_o<9> (clock_counter[9]_PWR_1_o_equal_6_o)
+     FDR:R                     0.459          dht22_reset
+    ----------------------------------------
+    Total                      5.492ns (2.168ns logic, 3.324ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 5.972ns (frequency: 167.448MHz)
+  Total number of paths / destination ports: 2087 / 44
+-------------------------------------------------------------------------
+Delay:               5.972ns (Levels of Logic = 5)
+  Source:            clk_1KHz/clk_count_0 (FF)
+  Destination:       clk_1KHz/clk_count_0 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: clk_1KHz/clk_count_0 to clk_1KHz/clk_count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.525   0.725  clk_1KHz/clk_count_0 (clk_1KHz/clk_count_0)
+     INV:I->O              1   0.255   0.000  clk_1KHz/Madd__n0013_lut<0>_INV_0 (clk_1KHz/Madd__n0013_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  clk_1KHz/Madd__n0013_cy<0> (clk_1KHz/Madd__n0013_cy<0>)
+     XORCY:CI->O           1   0.206   1.112  clk_1KHz/Madd__n0013_xor<1> (clk_1KHz/_n0013<13>)
+     LUT6:I1->O            1   0.254   0.790  clk_1KHz/_n0026<0>1_SW0 (N23)
+     LUT6:I4->O           16   0.250   1.181  clk_1KHz/_n0026<0>3 (clk_1KHz/_n0026)
+     FDR:R                     0.459          clk_1KHz/clk_count_0
+    ----------------------------------------
+    Total                      5.972ns (2.164ns logic, 3.808ns route)
+                                       (36.2% logic, 63.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_1MHz/clk_out'
+  Clock period: 6.765ns (frequency: 147.820MHz)
+  Total number of paths / destination ports: 2375 / 129
+-------------------------------------------------------------------------
+Delay:               6.765ns (Levels of Logic = 4)
+  Source:            dht22/count_0 (FF)
+  Destination:       dht22/count_9 (FF)
+  Source Clock:      clk_1MHz/clk_out rising
+  Destination Clock: clk_1MHz/clk_out rising
+
+  Data Path: dht22/count_0 to dht22/count_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.525   1.221  dht22/count_0 (dht22/count_0)
+     LUT6:I0->O            2   0.254   0.726  dht22/GND_6_o_GND_6_o_equal_12_o<9>11 (dht22/GND_6_o_GND_6_o_equal_12_o<9>1)
+     LUT5:I4->O           16   0.254   1.182  dht22/GND_6_o_GND_6_o_equal_12_o<9>1 (dht22/GND_6_o_GND_6_o_equal_12_o)
+     LUT5:I4->O            1   0.254   0.790  dht22/_n0440_inv1 (dht22/_n0440_inv1)
+     LUT6:I4->O           10   0.250   1.007  dht22/_n0440_inv3 (dht22/_n0440_inv)
+     FDRE:CE                   0.302          dht22/count_0
+    ----------------------------------------
+    Total                      6.765ns (1.839ns logic, 4.926ns route)
+                                       (27.2% logic, 72.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_1MHz/clk_out'
+  Total number of paths / destination ports: 71 / 60
+-------------------------------------------------------------------------
+Offset:              5.468ns (Levels of Logic = 3)
+  Source:            dht22_sda (PAD)
+  Destination:       dht22/count_9 (FF)
+  Destination Clock: clk_1MHz/clk_out rising
+
+  Data Path: dht22_sda to dht22/count_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O          19   1.328   1.537  dht22_sda_IOBUF (N19)
+     LUT5:I1->O            1   0.254   0.790  dht22/_n0440_inv1 (dht22/_n0440_inv1)
+     LUT6:I4->O           10   0.250   1.007  dht22/_n0440_inv3 (dht22/_n0440_inv)
+     FDRE:CE                   0.302          dht22/count_0
+    ----------------------------------------
+    Total                      5.468ns (2.134ns logic, 3.334ns route)
+                                       (39.0% logic, 61.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_1KHz/clk_out'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              5.393ns (Levels of Logic = 1)
+  Source:            seg7/Mram_seg (RAM)
+  Destination:       seg<7> (PAD)
+  Source Clock:      clk_1KHz/clk_out rising
+
+  Data Path: seg7/Mram_seg to seg<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB8BWER:CLKAWRCLK->DOADO7    1   1.800   0.681  seg7/Mram_seg (seg_7_OBUF)
+     OBUF:I->O                 2.912          seg_7_OBUF (seg<7>)
+    ----------------------------------------
+    Total                      5.393ns (4.712ns logic, 0.681ns route)
+                                       (87.4% logic, 12.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_1MHz/clk_out'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            dht22/wdata_1 (FF)
+  Destination:       dht22_sda (PAD)
+  Source Clock:      clk_1MHz/clk_out rising
+
+  Data Path: dht22/wdata_1 to dht22_sda
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.525   0.681  dht22/wdata_1 (dht22/wdata_1)
+     IOBUF:I->IO               2.912          dht22_sda_IOBUF (dht22_sda)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_1KHz/clk_out
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clk_1KHz/clk_out|    5.492|         |         |         |
+clk_1MHz/clk_out|   23.112|         |         |         |
+sw<0>           |   23.726|         |         |         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_1MHz/clk_out
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clk_1KHz/clk_out|    4.015|         |         |         |
+clk_1MHz/clk_out|    6.765|         |         |         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |    5.972|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sw<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sw<0>          |    2.769|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.36 secs
+ 
+--> 
+
+
+Total memory usage is 387900 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

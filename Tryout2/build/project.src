@@ -1,0 +1,6 @@
+verilog work ../IOT_Bridge.v
+verilog work ../dht22.v
+verilog work ../CLK_1MHZ.v
+verilog work ../CLK_1KHZ.v
+verilog work ../BIN2BCD.v
+verilog work ../Seg7.v

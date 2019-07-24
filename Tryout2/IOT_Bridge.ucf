@@ -1,0 +1,24 @@
+
+# ==== Cloclk inputs (CLK) ====
+
+#NET "clock"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
+NET "clock" TNM_NET = sys_clk;
+TIMESPEC TS_sys_clk = PERIOD sys_clk_pin 100 MHz HIGH 50%; 
+
+#NET "led"	LOC = "T8"	| IOSTANDARD = "LVCMOS33";
+
+NET "dig<0>"			LOC = "P78" | IOSTANDARD = LVCMOS33;
+NET "dig<1>"			LOC = "P79" | IOSTANDARD = LVCMOS33;
+NET "dig<2>"			LOC = "P80" | IOSTANDARD = LVCMOS33;
+NET "dig<3>"			LOC = "P81" | IOSTANDARD = LVCMOS33;
+NET "seg<0>"		LOC = "P82" | IOSTANDARD = LVCMOS33;
+NET "seg<1>"		LOC = "P83" | IOSTANDARD = LVCMOS33;
+NET "seg<2>"		LOC = "P85" | IOSTANDARD = LVCMOS33;
+NET "seg<3>"		LOC = "P88" | IOSTANDARD = LVCMOS33;
+NET "seg<4>"		LOC = "P92" | IOSTANDARD = LVCMOS33;
+NET "seg<5>"		LOC = "P93" | IOSTANDARD = LVCMOS33;
+NET "seg<6>"		LOC = "P94" | IOSTANDARD = LVCMOS33;
+NET "dht22_sda"			LOC = "P102" | IOSTANDARD = LVCMOS33;
+
+
+	
